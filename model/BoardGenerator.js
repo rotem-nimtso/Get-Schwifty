@@ -37,7 +37,11 @@ export class BoardGenerator{
     setBoard = (board) =>{
         var row = board.tiles[board.tiles.length - 1];
         var tile = row[row.length -1];
+        board.emptyTile = tile;
         tile.clearContent();
+
+        //Randomize Order
+
         return board;
     }
 }

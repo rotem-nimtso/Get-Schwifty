@@ -1,8 +1,14 @@
-export class TileController{
-    constructor()
-    {}
+import { MoveMaker } from "../model/MoveMaker.js";
 
-    move = (tileId) =>{
-        return () => console.log(tileId);
+var name;
+
+export class TileController{
+    constructor(moveMaker)
+    {
+        this.moveMaker = moveMaker;
+    }
+
+    move = function(id){
+        var updatedTiles = this.moveMaker.tryMove(id);
     }
 }

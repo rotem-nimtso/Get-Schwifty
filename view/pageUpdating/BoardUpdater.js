@@ -6,14 +6,14 @@ export class BoardUpdater{
         this.boardElement = boardElement;
     }
     
-    init = function(board, event) {
+    init = function(board, givenFunction) {
         
         let createTile = function(tileObj) {
             let tileElement = document.createElement("button");
             
             tileElement.id = tileObj.id;
             tileElement.innerText = tileObj.content;
-            tileElement.addEventListener("click", event(tileObj.id))
+            tileElement.addEventListener("click", () => {givenFunction(tileObj.id)})
 
             tileElement.classList.add("tile");
             return tileElement;
@@ -32,6 +32,7 @@ export class BoardUpdater{
                 let tileElement = document.getElementById(tile.id);
                 tileElement.innerText = tile.content;
             })
-        })
+        }
+        )
     }
 }
