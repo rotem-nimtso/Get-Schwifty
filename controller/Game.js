@@ -1,5 +1,6 @@
 import { BoardGenerator } from "../model/BoardGenerator.js";
 import { BoardUpdater } from "../view/pageUpdating/BoardUpdater.js";
+import { TileController } from "./TileController.js";
 
 export class Game{
     constructor(boardGenerator, content, boardUpdater){
@@ -10,6 +11,11 @@ export class Game{
 
     init = function() {
         var board = this.boardGenerator.generate(this.content);
-        this.boardUpdater.init(board);
+        var tileController = new TileController();
+        this.boardUpdater.init(board, tileController.move);
+    }
+
+    start = function() {
+
     }
 }
