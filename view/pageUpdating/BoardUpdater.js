@@ -25,4 +25,13 @@ export class BoardUpdater{
             })
         })
     }
+
+    updateBoard = function(board) {
+        board["tiles"].forEach(row=>{
+            row.forEach(tile => {
+                let tileElement = document.getElementById(tile.id);
+                tileElement.innerText = tile.content;
+            })
+        })
+    }
 }

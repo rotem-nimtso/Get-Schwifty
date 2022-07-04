@@ -17,6 +17,7 @@ function setGame(){
     
     var game = new Game(boardGenerator, boardContent, boardUpdater);
     game.init();
+    game.start();
 }
 
 

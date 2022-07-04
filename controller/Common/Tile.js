@@ -8,4 +8,8 @@ export class Tile{
     setContent = function(newContent){
         this.content = newContent;
     }
+
+    clearContent = function(){
+        this.setContent("");
+    }
 }

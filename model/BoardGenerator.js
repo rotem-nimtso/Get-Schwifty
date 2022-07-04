@@ -1,5 +1,6 @@
 import {Board} from "../controller/Common/Board.js"
 import { Tile } from "../controller/Common/Tile.js"
+import { TileController } from "../controller/TileController.js";
 
 export class BoardGenerator{
     
@@ -31,5 +32,12 @@ export class BoardGenerator{
         }
 
         return new Board(generateTiles());
+    }
+
+    setBoard = (board) =>{
+        var row = board.tiles[board.tiles.length - 1];
+        var tile = row[row.length -1];
+        tile.clearContent();
+        return board;
     }
 }
